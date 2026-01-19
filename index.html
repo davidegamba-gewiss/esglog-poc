@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ESGlog - Piattaforma digitale per la gestione ESG nel settore delle costruzioni">
+    <title>ESGlog - Digitalizzazione ESG per Costruzioni</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header con Menu Fisso -->
+    <header class="header" role="banner">
+        <nav class="navbar" role="navigation" aria-label="Menu principale">
+            <div class="container nav-container">
+                <div class="logo">
+                    <a href="index.html" aria-label="ESGlog Home">
+                        <h1>ESG<span class="logo-highlight">log</span></h1>
+                    </a>
+                </div>
+
+                <!-- Menu Hamburger per Mobile -->
+                <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#mission" class="nav-link">Mission</a></li>
+                    <li><a href="#esg-digital" class="nav-link">ESG & Digital</a></li>
+                    <li><a href="logistica.html" class="nav-link">Logistica</a></li>
+                    <li><a href="laboratorio.html" class="nav-link">Laboratorio AI</a></li>
+                    <li><a href="eventi.html" class="nav-link">Eventi</a></li>
+                    <li><a href="contatti.html" class="nav-link">Contatti</a></li>
+                    <li><a href="#" class="nav-link btn-login" id="loginBtn">Accedi</a></li>
+                    <li><a href="#registrazione" class="nav-link btn-register">Registrati</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">Trasforma la Logistica delle Costruzioni con l'ESG</h2>
+                <p class="hero-subtitle">La piattaforma digitale che integra sostenibilità e innovazione nella gestione dei progetti edilizi</p>
+                <div class="hero-cta">
+                    <a href="#registrazione" class="btn btn-primary">Inizia Gratis</a>
+                    <a href="#mission" class="btn btn-secondary">Scopri di Più</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section id="mission" class="mission-section">
+        <div class="container">
+            <div class="mission-grid">
+                <div class="mission-text">
+                    <h2>La Nostra Mission</h2>
+                    <p class="lead">Rivoluzionare il settore delle costruzioni attraverso la digitalizzazione della logistica e l'integrazione dei principi ESG (Environmental, Social, Governance).</p>
+                    <p>ESGlog nasce dalla consapevolezza che il settore edilizio è responsabile del 38% delle emissioni globali di CO2. La nostra piattaforma permette alle aziende di:</p>
+                    <ul class="mission-list">
+                        <li><strong>Monitorare</strong> l'impatto ambientale della logistica on-site e off-site</li>
+                        <li><strong>Ottimizzare</strong> i flussi di materiali e mezzi riducendo sprechi</li>
+                        <li><strong>Certificare</strong> le performance ESG con report conformi agli standard internazionali</li>
+                        <li><strong>Innovare</strong> attraverso AI e benchmarking settoriale</li>
+                    </ul>
+                    <a href="#registrazione" class="btn btn-primary">Registrati Ora</a>
+                </div>
+                <div class="mission-image">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800" alt="Cantiere edile con gru e costruzioni in corso" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESG & Digital Section -->
+    <section id="esg-digital" class="esg-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Perché ESG e Digitalizzazione?</h2>
+                <p class="section-subtitle">Il settore delle costruzioni è al centro della transizione sostenibile</p>
+            </div>
+
+            <div class="esg-grid">
+                <div class="esg-card">
+                    <div class="esg-icon environmental">E</div>
+                    <h3>Environmental</h3>
+                    <p>38% delle emissioni globali di CO2 provengono dal settore edilizio. La logistica rappresenta il 15-20% dell'impatto ambientale totale di un progetto.</p>
+                    <ul class="stats-list">
+                        <li>🌍 Riduzione emissioni fino al 30%</li>
+                        <li>♻️ Ottimizzazione gestione rifiuti</li>
+                        <li>⚡ Efficienza energetica cantieri</li>
+                    </ul>
+                </div>
+
+                <div class="esg-card">
+                    <div class="esg-icon social">S</div>
+                    <h3>Social</h3>
+                    <p>Sicurezza dei lavoratori e impatto sulle comunità locali sono priorità crescenti per investitori e stakeholder.</p>
+                    <ul class="stats-list">
+                        <li>👷 Sicurezza sul lavoro migliorata</li>
+                        <li>🤝 Coinvolgimento comunità</li>
+                        <li>📊 Trasparenza filiera fornitori</li>
+                    </ul>
+                </div>
+
+                <div class="esg-card">
+                    <div class="esg-icon governance">G</div>
+                    <h3>Governance</h3>
+                    <p>Normative europee (EU Taxonomy, CSRD) richiedono reporting ESG dettagliato. Il digital è essenziale per la compliance.</p>
+                    <ul class="stats-list">
+                        <li>📋 Conformità normativa EU</li>
+                        <li>🔍 Tracciabilità decisioni</li>
+                        <li>📈 Report automatizzati</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Grafico Digitalizzazione -->
+            <div class="digital-chart">
+                <h3>Il Ritardo Digitale del Settore Costruzioni</h3>
+                <div class="chart-container">
+                    <canvas id="digitalChart"></canvas>
+                </div>
+                <p class="chart-note"><em>Fonte: McKinsey Global Institute, 2023 - Indice di digitalizzazione per settore</em></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Logistica -->
+    <section class="cta-logistica">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Approfondisci la Logistica 5.0</h2>
+                <p>Scopri come ottimizzare i flussi on-site e off-site per ridurre costi e impatto ambientale</p>
+                <a href="logistica.html" class="btn btn-primary btn-large">Esplora Logistica Edile</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registrazione Section -->
+    <section id="registrazione" class="register-section">
+        <div class="container">
+            <div class="register-container">
+                <div class="register-info">
+                    <h2>Inizia la Tua Trasformazione ESG</h2>
+                    <p class="lead">Registrati gratuitamente e accedi alla piattaforma ESGlog</p>
+                    <ul class="benefits-list">
+                        <li>✅ Piano Free sempre disponibile</li>
+                        <li>✅ Linee guida logistica personalizzate</li>
+                        <li>✅ Suggerimenti AI base</li>
+                        <li>✅ Report ESG scaricabili</li>
+                        <li>✅ Upgrade a Pro/Advance quando vuoi</li>
+                    </ul>
+                </div>
+
+                <div class="register-form-container">
+                    <form id="registerForm" class="register-form">
+                        <h3>Crea il tuo account</h3>
+
+                        <div class="form-group">
+                            <label for="companyName">Nome Azienda *</label>
+                            <input type="text" id="companyName" name="companyName" required aria-required="true">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Aziendale *</label>
+                            <input type="email" id="email" name="email" required aria-required="true">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password *</label>
+                            <input type="password" id="password" name="password" required minlength="8" aria-required="true">
+                            <small>Minimo 8 caratteri</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sector">Tipologia Settore *</label>
+                            <select id="sector" name="sector" required aria-required="true">
+                                <option value="">Seleziona...</option>
+                                <option value="ristrutturazioni">Ristrutturazioni</option>
+                                <option value="opere-stradali">Opere Stradali</option>
+                                <option value="infrastrutture">Infrastrutture</option>
+                                <option value="edilizia-residenziale">Edilizia Residenziale</option>
+                                <option value="edilizia-commerciale">Edilizia Commerciale</option>
+                                <option value="opere-pubbliche">Opere Pubbliche</option>
+                                <option value="restauro">Restauro e Conservazione</option>
+                                <option value="altro">Altro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label>
+                                <input type="checkbox" id="gdprConsent" name="gdprConsent" required aria-required="true">
+                                <span>Acconsento al trattamento dei dati personali secondo il <a href="#" target="_blank">GDPR</a> e la <a href="#" target="_blank">Privacy Policy</a> *</span>
+                            </label>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label>
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span>Desidero ricevere newsletter e aggiornamenti</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Registrati Gratis</button>
+
+                        <p class="form-footer">Hai già un account? <a href="#" id="loginLink">Accedi</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>ESGlog</h4>
+                    <p>La piattaforma digitale per l'ESG nelle costruzioni</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Link Utili</h4>
+                    <ul>
+                        <li><a href="#mission">Chi Siamo</a></li>
+                        <li><a href="logistica.html">Logistica</a></li>
+                        <li><a href="laboratorio.html">Laboratorio AI</a></li>
+                        <li><a href="eventi.html">Eventi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Supporto</h4>
+                    <ul>
+                        <li><a href="contatti.html">Contatti</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Termini di Servizio</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Seguici</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                        <a href="#" aria-label="Twitter">Twitter</a>
+                        <a href="#" aria-label="Facebook">Facebook</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ESGlog. Tutti i diritti riservati. | PoC per Business Plan Competition</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Login -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Accedi a ESGlog</h3>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Accedi</button>
+                <p class="form-footer">Non hai un account? <a href="#registrazione">Registrati</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script>
+        // Grafico digitalizzazione settori
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('digitalChart');
+            if (ctx) {
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['ICT', 'Finanza', 'Retail', 'Manifattura', 'Costruzioni'],
+                        datasets: [{
+                            label: 'Indice Digitalizzazione (0-100)',
+                            data: [85, 78, 65, 52, 23],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.7)',
+                                'rgba(75, 192, 192, 0.7)',
+                                'rgba(75, 192, 192, 0.7)',
+                                'rgba(75, 192, 192, 0.7)',
+                                'rgba(220, 53, 69, 0.7)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(220, 53, 69, 1)'
+                            ],
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: 100
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

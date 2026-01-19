@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio AI - ESGlog</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="container nav-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1>ESG<span class="logo-highlight">log</span></h1>
+                    </a>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="dashboard.html" class="nav-link" id="dashboardLink">Dashboard</a></li>
+                    <li><a href="risultati.html" class="nav-link">Risultati</a></li>
+                    <li><a href="laboratorio.html" class="nav-link">Laboratorio AI</a></li>
+                    <li><a href="eventi.html" class="nav-link">Eventi</a></li>
+                    <li><a href="contatti.html" class="nav-link">Contatti</a></li>
+                    <li><a href="#" class="nav-link btn-login" id="loginBtn">Accedi</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" style="padding: 60px 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+        <div class="container">
+            <h2 class="hero-title" style="font-size: 2.5rem;">🤖 Laboratorio AI</h2>
+            <p class="hero-subtitle">Scouting tecnologie innovative per la digitalizzazione e sostenibilità edile</p>
+        </div>
+    </section>
+
+    <section style="padding: 80px 0; background-color: var(--light-gray);">
+        <div class="container">
+            <div id="accessAlert" class="alert alert-warning">
+                <strong>🔒 Accesso Limitato:</strong> Il Laboratorio AI è disponibile per piani Pro e Advance.
+                <a href="index.html#registrazione">Registrati</a> o <a href="dashboard.html#piani">effettua l'upgrade</a> per accedere.
+            </div>
+
+            <div id="labContent" style="display: none;">
+                <div class="section-header">
+                    <h2>Tecnologie Innovative per l'Edilizia Sostenibile</h2>
+                    <p class="section-subtitle">Scopri startup e soluzioni tech per digitalizzare e rendere più sostenibile il tuo business</p>
+                </div>
+
+                <div class="alert alert-info" style="margin-bottom: 3rem;">
+                    <strong>🔍 Come funziona:</strong> Utilizziamo piattaforme di scouting come <strong>Findest</strong> e <strong>FirstIgnite</strong>
+                    per identificare tecnologie emergenti in ambito digital e sostenibilità. I risultati sono filtrati per rilevanza al settore costruzioni.
+                </div>
+
+                <!-- Filtri -->
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: var(--shadow-md); margin-bottom: 3rem;">
+                    <h3 style="margin-bottom: 1.5rem;">🔎 Filtra Tecnologie</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                        <div class="form-group">
+                            <label>Categoria</label>
+                            <select id="categoryFilter">
+                                <option value="all">Tutte</option>
+                                <option value="digital">Digitalizzazione</option>
+                                <option value="sustainability">Sostenibilità</option>
+                                <option value="logistics">Logistica</option>
+                                <option value="safety">Sicurezza</option>
+                                <option value="materials">Materiali Innovativi</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Stadio Sviluppo</label>
+                            <select id="stageFilter">
+                                <option value="all">Tutti</option>
+                                <option value="commercial">Commerciale</option>
+                                <option value="pilot">Pilota</option>
+                                <option value="r&d">R&D</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Regione</label>
+                            <select id="regionFilter">
+                                <option value="all">Tutte</option>
+                                <option value="europe">Europa</option>
+                                <option value="italy">Italia</option>
+                                <option value="north-america">Nord America</option>
+                                <option value="asia">Asia</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" style="margin-top: 1.5rem;" onclick="applyFilters()">Applica Filtri</button>
+                </div>
+
+                <!-- Tecnologie -->
+                <div class="dashboard-grid" id="techGrid">
+                    <!-- Tech Card 1 -->
+                    <div class="dashboard-card tech-card" data-category="digital" data-stage="commercial" data-region="europe">
+                        <div class="badge badge-success" style="margin-bottom: 1rem;">Commerciale</div>
+                        <h3>🏗️ BuildOps</h3>
+                        <p><strong>Categoria:</strong> Digitalizzazione</p>
+                        <p>Piattaforma cloud per la gestione digitale di cantieri e supply chain. Integrazione IoT e AI per tracking real-time materiali e mezzi.</p>
+                        <ul class="stats-list" style="margin: 1rem 0;">
+                            <li><strong>Impatto:</strong> -25% costi logistici</li>
+                            <li><strong>ROI:</strong> 12-18 mesi</li>
+                            <li><strong>Regione:</strong> Europa (UK)</li>
+                        </ul>
+                        <button class="btn btn-outline" onclick="requestDemo('BuildOps')">Richiedi Info</button>
+                    </div>
+
+                    <!-- Tech Card 2 -->
+                    <div class="dashboard-card tech-card" data-category="sustainability" data-stage="commercial" data-region="italy">
+                        <div class="badge badge-success" style="margin-bottom: 1rem;">Commerciale</div>
+                        <h3>♻️ EcoTrack Materials</h3>
+                        <p><strong>Categoria:</strong> Sostenibilità</p>
+                        <p>Sistema RFID per tracciabilità completa dei materiali da costruzione, dalla produzione al riciclo. Certificazione EPD automatizzata.</p>
+                        <ul class="stats-list" style="margin: 1rem 0;">
+                            <li><strong>Impatto:</strong> +60% tasso riciclo</li>
+                            <li><strong>Certificazioni:</strong> ISO 14001, EPD</li>
+                            <li><strong>Regione:</strong> Italia</li>
+                        </ul>
+                        <button class="btn btn-outline" onclick="requestDemo('EcoTrack')">Richiedi Info</button>
+                    </div>
+
+                    <!-- Tech Card 3 -->
+                    <div class="dashboard-card tech-card" data-category="logistics" data-stage="pilot" data-region="europe">
+                        <div class="badge badge-warning" style="margin-bottom: 1rem;">Pilota</div>
+                        <h3>🚛 GreenFleet AI</h3>
+                        <p><strong>Categoria:</strong> Logistica</p>
+                        <p>Algoritmi AI per ottimizzazione percorsi e consolidamento carichi. Riduce emissioni CO2 dei trasporti fino al 35%.</p>
+                        <ul class="stats-list" style="margin: 1rem 0;">
+                            <li><strong>Impatto:</strong> -35% emissioni trasporti</li>
+                            <li><strong>Tecnologia:</strong> Machine Learning</li>
+                            <li><strong>Regione:</strong> Europa (Germania)</li>
+                        </ul>
+                        <button class="btn btn-outline" onclick="requestDemo('GreenFleet')">Richiedi Info</button>
+                    </div>
+
+                    <!-- Tech Card 4 -->
+                    <div class="dashboard-card tech-card" data-category="safety" data-stage="commercial" data-region="north-america">
+                        <div class="badge badge-success" style="margin-bottom: 1rem;">Commerciale</div>
+                        <h3>👷 SafeSite IoT</h3>
+                        <p><strong>Categoria:</strong> Sicurezza</p>
+                        <p>Wearable IoT per monitoraggio sicurezza lavoratori in tempo reale. Alert automatici su rischi e zone pericolose.</p>
+                        <ul class="stats-list" style="margin: 1rem 0;">
+                            <li><strong>Impatto:</strong> -45% incidenti cantiere</li>
+                            <li><strong>Tecnologia:</strong> IoT + AI</li>
+                            <li><strong>Regione:</strong> USA</li>
+                        </ul>
+                        <button class="btn btn-outline" onclick="requestDemo('SafeSite')">Richiedi Info</button>
+                    </div>
+
+                    <!-- Tech Card 5 -->
+                    <div class="dashboard-card tech-card" data-category="materials" data-stage="r&d" data-region="europe">
+                        <div class="badge badge-info" style="margin-bottom: 1rem;">R&D</div>
+                        <h3>🧱 BioConstruct</h3>
+                        <p><strong>Categoria:</strong> Materiali Innovativi</p>
+                        <p>Materiali da costruzione bio-based con carbon footprint negativo. Prodotti da scarti agricoli e funghi.</p>
+                        <ul class="stats-list" style="margin: 1rem 0;">
+                            <li><strong>Impatto:</strong> Carbon negative</li>
+                            <li><strong>Stadio:</strong> Prototipo industriale</li>
+                            <li><strong>Regione:</strong> Paesi Bassi</li>
+                        </ul>
+                        <button class="btn btn-outline" onclick="requestDemo('BioConstruct')">Richiedi Info</button>
+                    </div>
+
+                    <!-- Tech Card 6 -->
+                    <div class="dashboard-card tech-card" data-category="digital" data-stage="commercial" data-region="italy">
+                        <div class="badge badge-success" style="margin-bottom: 1rem;">Commerciale</div>
+                        <h3>📱 SmartBIM+</h3>
+                        <p><strong>Categoria:</strong> Digitalizzazione</p>
+                        <p>Piattaforma BIM integrata con moduli ESG, calcolo LCA e integrazione sensori IoT per as-built real-time.</p>
+                        <ul class="stats-list" style="margin: 1rem 0;">
+                            <li><strong>Impatto:</strong> -30% errori progettazione</li>
+                            <li><strong>Standard:</strong> ISO 19650, EN 15978</li>
+                            <li><strong>Regione:</strong> Italia</li>
+                        </ul>
+                        <button class="btn btn-outline" onclick="requestDemo('SmartBIM')">Richiedi Info</button>
+                    </div>
+                </div>
+
+                <!-- Report Personalizzato -->
+                <div style="background: white; padding: 2.5rem; border-radius: 15px; box-shadow: var(--shadow-md); margin-top: 3rem; text-align: center;">
+                    <h3>📄 Report Personalizzato</h3>
+                    <p>Vuoi un report di scouting personalizzato per il tuo settore specifico?</p>
+                    <p class="lead">Il nostro team può generare analisi custom basate su:</p>
+                    <ul style="display: inline-block; text-align: left; margin: 1.5rem 0;">
+                        <li>Il tuo settore specifico (es. ristrutturazioni, infrastrutture)</li>
+                        <li>Budget disponibile per innovazione</li>
+                        <li>Obiettivi ESG prioritari</li>
+                        <li>Timeline implementazione</li>
+                    </ul>
+                    <br>
+                    <button class="btn btn-primary btn-large" onclick="requestCustomReport()">Richiedi Report Custom</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partner Carousel -->
+    <section style="padding: 60px 0; background-color: var(--white);">
+        <div class="container">
+            <h2 style="text-align: center; color: var(--primary-blue); margin-bottom: 3rem;">I Nostri Partner</h2>
+            <div class="partner-carousel">
+                <div class="partner-logo">Findest</div>
+                <div class="partner-logo">FirstIgnite</div>
+                <div class="partner-logo">EIT Climate-KIC</div>
+                <div class="partner-logo">BuildTech Accelerator</div>
+                <div class="partner-logo">Confindustria Digitale</div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .partner-carousel {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .partner-logo {
+            padding: 1.5rem 2.5rem;
+            background: var(--light-gray);
+            border-radius: 10px;
+            font-weight: 600;
+            color: var(--text-dark);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .partner-logo:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+    </style>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>ESGlog</h4>
+                    <p>La piattaforma digitale per l'ESG nelle costruzioni</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Link Utili</h4>
+                    <ul>
+                        <li><a href="index.html#mission">Chi Siamo</a></li>
+                        <li><a href="logistica.html">Logistica</a></li>
+                        <li><a href="laboratorio.html">Laboratorio AI</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Supporto</h4>
+                    <ul>
+                        <li><a href="contatti.html">Contatti</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ESGlog. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check access
+            if (auth.isAuthenticated() && auth.hasAccess('ai_lab')) {
+                document.getElementById('accessAlert').style.display = 'none';
+                document.getElementById('labContent').style.display = 'block';
+            }
+        });
+
+        function applyFilters() {
+            const category = document.getElementById('categoryFilter').value;
+            const stage = document.getElementById('stageFilter').value;
+            const region = document.getElementById('regionFilter').value;
+
+            const cards = document.querySelectorAll('.tech-card');
+
+            cards.forEach(card => {
+                let show = true;
+
+                if (category !== 'all' && card.dataset.category !== category) show = false;
+                if (stage !== 'all' && card.dataset.stage !== stage) show = false;
+                if (region !== 'all' && card.dataset.region !== region) show = false;
+
+                card.style.display = show ? 'block' : 'none';
+            });
+        }
+
+        function requestDemo(tech) {
+            alert(`📧 Richiesta Info: ${tech}\n\nNella versione production, verresti reindirizzato a un form di contatto o directly collegato con il partner tecnologico.\n\nRiceverai:\n- Scheda tecnica dettagliata\n- Case study settore costruzioni\n- Preventivo personalizzato\n- Possibilità demo/pilota`);
+        }
+
+        function requestCustomReport() {
+            if (!auth.isAuthenticated()) {
+                alert('Devi essere loggato per richiedere un report');
+                window.location.href = 'index.html#registrazione';
+                return;
+            }
+
+            alert('📄 Report Personalizzato\n\nIl nostro team ti contatterà entro 48h per:\n- Intervista esigenze specifiche\n- Analisi settore e obiettivi ESG\n- Scouting tecnologie target\n- Report dettagliato con raccomandazioni\n\nServizio incluso nei piani Pro e Advance!');
+        }
+    </script>
+</body>
+</html>

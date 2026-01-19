@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventi - ESGlog</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="container nav-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1>ESG<span class="logo-highlight">log</span></h1>
+                    </a>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li><a href="laboratorio.html" class="nav-link">Laboratorio AI</a></li>
+                    <li><a href="eventi.html" class="nav-link">Eventi</a></li>
+                    <li><a href="contatti.html" class="nav-link">Contatti</a></li>
+                    <li><a href="#" class="nav-link btn-login" id="loginBtn">Accedi</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" style="padding: 60px 0; background: linear-gradient(135deg, #2d9f7c 0%, #2c5aa0 100%);">
+        <div class="container">
+            <h2 class="hero-title" style="font-size: 2.5rem;">📅 Eventi ESGlog</h2>
+            <p class="hero-subtitle">Webinar, workshop e conferenze su ESG e digitalizzazione edile</p>
+        </div>
+    </section>
+
+    <section style="padding: 80px 0; background-color: var(--light-gray);">
+        <div class="container">
+            <div id="accessAlert" class="alert alert-warning">
+                <strong>🔒 Accesso Limitato:</strong> Gli eventi sono disponibili per utenti con piano Pro e Advance.
+                <a href="index.html#registrazione">Registrati</a> o <a href="dashboard.html#piani">effettua l'upgrade</a> per accedere.
+            </div>
+
+            <div id="eventsContent">
+                <!-- Filtri Eventi -->
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: var(--shadow-md); margin-bottom: 3rem;">
+                    <h3 style="margin-bottom: 1.5rem;">🔎 Filtra Eventi</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                        <div class="form-group">
+                            <label>Tipo</label>
+                            <select id="typeFilter" onchange="filterEvents()">
+                                <option value="all">Tutti</option>
+                                <option value="webinar">Webinar</option>
+                                <option value="workshop">Workshop</option>
+                                <option value="conference">Conferenze</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Periodo</label>
+                            <select id="periodFilter" onchange="filterEvents()">
+                                <option value="all">Tutti</option>
+                                <option value="upcoming">Prossimi</option>
+                                <option value="past">Passati</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Tema</label>
+                            <select id="topicFilter" onchange="filterEvents()">
+                                <option value="all">Tutti</option>
+                                <option value="esg">ESG & Sostenibilità</option>
+                                <option value="digital">Digitalizzazione</option>
+                                <option value="logistics">Logistica</option>
+                                <option value="compliance">Normativa & Compliance</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prossimi Eventi -->
+                <section id="upcomingEvents">
+                    <h2 style="color: var(--primary-blue); margin-bottom: 2rem;">🔜 Prossimi Eventi</h2>
+
+                    <div class="dashboard-grid">
+                        <!-- Evento 1 -->
+                        <div class="dashboard-card event-card" data-type="webinar" data-period="upcoming" data-topic="esg">
+                            <div class="badge badge-success" style="margin-bottom: 1rem;">WEBINAR</div>
+                            <h3>ESG nella Supply Chain Edile</h3>
+                            <p><strong>📅 Data:</strong> 25 Gennaio 2026, 15:00-16:30</p>
+                            <p><strong>👤 Relatore:</strong> Dott.ssa Maria Rossi, Esperta ESG</p>
+                            <p>Come integrare criteri ESG nella selezione e gestione dei fornitori per progetti di costruzione sostenibile.</p>
+                            <ul class="stats-list" style="margin: 1rem 0;">
+                                <li>✅ Certificato di partecipazione</li>
+                                <li>✅ Materiali scaricabili</li>
+                                <li>✅ Q&A live</li>
+                            </ul>
+                            <button class="btn btn-primary" onclick="registerEvent('ESG Supply Chain')">Registrati Gratis</button>
+                        </div>
+
+                        <!-- Evento 2 -->
+                        <div class="dashboard-card event-card" data-type="workshop" data-period="upcoming" data-topic="digital">
+                            <div class="badge badge-info" style="margin-bottom: 1rem;">WORKSHOP</div>
+                            <h3>BIM e IoT per Cantieri 4.0</h3>
+                            <p><strong>📅 Data:</strong> 5 Febbraio 2026, 10:00-17:00</p>
+                            <p><strong>📍 Luogo:</strong> Milano (ibrido)</p>
+                            <p>Workshop pratico sull'integrazione BIM con sensori IoT per monitoraggio real-time dei cantieri.</p>
+                            <ul class="stats-list" style="margin: 1rem 0;">
+                                <li>✅ Hands-on session</li>
+                                <li>✅ Certificato professionale</li>
+                                <li>✅ Networking lunch</li>
+                            </ul>
+                            <button class="btn btn-primary" onclick="registerEvent('BIM IoT Workshop')">Iscriviti (€150)</button>
+                        </div>
+
+                        <!-- Evento 3 -->
+                        <div class="dashboard-card event-card" data-type="conference" data-period="upcoming" data-topic="compliance">
+                            <div class="badge badge-warning" style="margin-bottom: 1rem;">CONFERENZA</div>
+                            <h3>EU Taxonomy e CSRD per Costruzioni</h3>
+                            <p><strong>📅 Data:</strong> 12 Febbraio 2026, 09:00-13:00</p>
+                            <p><strong>👥 Relatori:</strong> Panel esperti EU</p>
+                            <p>Conferenza sulla nuova normativa europea ESG: EU Taxonomy e Corporate Sustainability Reporting Directive.</p>
+                            <ul class="stats-list" style="margin: 1rem 0;">
+                                <li>✅ Crediti formativi</li>
+                                <li>✅ Guida compliance inclusa</li>
+                                <li>✅ Registrazione disponibile</li>
+                            </ul>
+                            <button class="btn btn-primary" onclick="registerEvent('EU Taxonomy Conference')">Registrati</button>
+                        </div>
+
+                        <!-- Evento 4 -->
+                        <div class="dashboard-card event-card" data-type="webinar" data-period="upcoming" data-topic="logistics">
+                            <div class="badge badge-success" style="margin-bottom: 1rem;">WEBINAR</div>
+                            <h3>AI per Ottimizzazione Logistica</h3>
+                            <p><strong>📅 Data:</strong> 18 Febbraio 2026, 16:00-17:00</p>
+                            <p><strong>👤 Relatore:</strong> Ing. Marco Bianchi, AI Specialist</p>
+                            <p>Applicazioni pratiche di Machine Learning per ridurre costi e emissioni nella logistica edile.</p>
+                            <ul class="stats-list" style="margin: 1rem 0;">
+                                <li>✅ Case study reali</li>
+                                <li>✅ Demo tool AI</li>
+                                <li>✅ Template scaricabili</li>
+                            </ul>
+                            <button class="btn btn-primary" onclick="registerEvent('AI Logistics')">Registrati Gratis</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Eventi Passati -->
+                <section id="pastEvents" style="margin-top: 4rem;">
+                    <h2 style="color: var(--primary-blue); margin-bottom: 2rem;">📼 Eventi Passati - Materiali Disponibili</h2>
+                    <p class="lead" style="margin-bottom: 2rem;">Accedi alle registrazioni e ai materiali degli eventi precedenti</p>
+
+                    <div class="dashboard-grid">
+                        <!-- Evento Passato 1 -->
+                        <div class="dashboard-card event-card" data-type="webinar" data-period="past" data-topic="esg">
+                            <div class="badge" style="background: var(--text-light); color: white; margin-bottom: 1rem;">PASSATO</div>
+                            <h3>Introduzione all'ESG per PMI Edili</h3>
+                            <p><strong>📅 Data:</strong> 10 Dicembre 2025</p>
+                            <p><strong>👥 Partecipanti:</strong> 156</p>
+                            <p>Webinar introduttivo sui criteri ESG e la loro applicazione nel settore delle costruzioni.</p>
+                            <div style="margin-top: 1.5rem;">
+                                <button class="btn btn-outline" onclick="downloadMaterial('intro-esg')">📥 Scarica Slides</button>
+                                <button class="btn btn-outline" onclick="watchRecording('intro-esg')">▶️ Guarda Registrazione</button>
+                            </div>
+                        </div>
+
+                        <!-- Evento Passato 2 -->
+                        <div class="dashboard-card event-card" data-type="workshop" data-period="past" data-topic="digital">
+                            <div class="badge" style="background: var(--text-light); color: white; margin-bottom: 1rem;">PASSATO</div>
+                            <h3>Digitalizzazione Cantieri con WMS</h3>
+                            <p><strong>📅 Data:</strong> 20 Novembre 2025</p>
+                            <p><strong>👥 Partecipanti:</strong> 45</p>
+                            <p>Workshop pratico sull'implementazione di Warehouse Management System nei cantieri.</p>
+                            <div style="margin-top: 1.5rem;">
+                                <button class="btn btn-outline" onclick="downloadMaterial('wms-workshop')">📥 Scarica Materiali</button>
+                                <button class="btn btn-outline" onclick="watchRecording('wms-workshop')">▶️ Guarda Registrazione</button>
+                            </div>
+                        </div>
+
+                        <!-- Evento Passato 3 -->
+                        <div class="dashboard-card event-card" data-type="conference" data-period="past" data-topic="esg">
+                            <div class="badge" style="background: var(--text-light); color: white; margin-bottom: 1rem;">PASSATO</div>
+                            <h3>ESGlog Summit 2025</h3>
+                            <p><strong>📅 Data:</strong> 5 Ottobre 2025</p>
+                            <p><strong>👥 Partecipanti:</strong> 320</p>
+                            <p>Conferenza annuale con keynote speaker internazionali su futuro ESG nelle costruzioni.</p>
+                            <div style="margin-top: 1.5rem;">
+                                <button class="btn btn-outline" onclick="downloadMaterial('summit-2025')">📥 Scarica Atti</button>
+                                <button class="btn btn-outline" onclick="watchRecording('summit-2025')">▶️ Highlights Video</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Calendario -->
+                <section style="margin-top: 4rem;">
+                    <h2 style="color: var(--primary-blue); margin-bottom: 2rem; text-align: center;">📅 Calendario Completo</h2>
+
+                    <div class="digital-chart">
+                        <div style="padding: 2rem;">
+                            <p style="text-align: center; color: var(--text-light); font-size: 1.1rem;">
+                                Nella versione production, qui verrebbe integrato un calendario interattivo (es. FullCalendar.js o Google Calendar API)
+                                con tutti gli eventi, possibilità di aggiungere al proprio calendario, reminder automatici, ecc.
+                            </p>
+                            <div style="margin-top: 2rem; text-align: center;">
+                                <button class="btn btn-primary" onclick="alert('Integrazione Google Calendar/Outlook in produzione')">
+                                    📥 Aggiungi al Calendario
+                                </button>
+                                <button class="btn btn-secondary" onclick="alert('Iscrizione reminder email/SMS in produzione')">
+                                    🔔 Abilita Reminder
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Newsletter Eventi -->
+                <section style="margin-top: 4rem;">
+                    <div style="background: var(--gradient-green-blue); padding: 3rem; border-radius: 15px; text-align: center; color: white;">
+                        <h2 style="color: white; margin-bottom: 1rem;">🔔 Non Perdere Nessun Evento</h2>
+                        <p style="margin-bottom: 2rem; opacity: 0.95;">Iscriviti alla newsletter eventi per ricevere aggiornamenti e reminder</p>
+                        <button class="btn btn-secondary btn-large" onclick="subscribeEventNewsletter()">Iscriviti alla Newsletter Eventi</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>ESGlog</h4>
+                    <p>La piattaforma digitale per l'ESG nelle costruzioni</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Link Utili</h4>
+                    <ul>
+                        <li><a href="index.html#mission">Chi Siamo</a></li>
+                        <li><a href="logistica.html">Logistica</a></li>
+                        <li><a href="laboratorio.html">Laboratorio AI</a></li>
+                        <li><a href="eventi.html">Eventi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Supporto</h4>
+                    <ul>
+                        <li><a href="contatti.html">Contatti</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Seguici</h4>
+                    <div class="social-links">
+                        <a href="#">LinkedIn</a>
+                        <a href="#">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ESGlog. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check access
+            if (auth.isAuthenticated() && auth.hasAccess('events')) {
+                document.getElementById('accessAlert').style.display = 'none';
+            } else if (!auth.isAuthenticated()) {
+                // Hide content if not logged in
+                document.getElementById('eventsContent').style.display = 'none';
+            }
+        });
+
+        function filterEvents() {
+            const type = document.getElementById('typeFilter').value;
+            const period = document.getElementById('periodFilter').value;
+            const topic = document.getElementById('topicFilter').value;
+
+            const cards = document.querySelectorAll('.event-card');
+
+            cards.forEach(card => {
+                let show = true;
+
+                if (type !== 'all' && card.dataset.type !== type) show = false;
+                if (period !== 'all' && card.dataset.period !== period) show = false;
+                if (topic !== 'all' && card.dataset.topic !== topic) show = false;
+
+                card.style.display = show ? 'block' : 'none';
+            });
+        }
+
+        function registerEvent(eventName) {
+            if (!auth.isAuthenticated()) {
+                alert('Devi essere loggato per registrarti agli eventi');
+                window.location.href = 'index.html#registrazione';
+                return;
+            }
+
+            if (!auth.hasAccess('events')) {
+                alert('Gli eventi sono disponibili per piani Pro e Advance.\n\nEffettua l\'upgrade per accedere!');
+                window.location.href = 'dashboard.html#piani';
+                return;
+            }
+
+            alert(`✅ Registrazione Evento: ${eventName}\n\n` +
+                `Riceverai:\n` +
+                `- Email di conferma con link accesso\n` +
+                `- Reminder 24h prima dell'evento\n` +
+                `- Materiali pre-evento\n` +
+                `- Certificato di partecipazione\n\n` +
+                `Nella versione production: integrazione calendario + email automation`);
+        }
+
+        function downloadMaterial(eventId) {
+            if (!auth.isAuthenticated() || !auth.hasAccess('events')) {
+                alert('Funzionalità disponibile per piani Pro/Advance');
+                return;
+            }
+
+            alert(`📥 Download Materiali: ${eventId}\n\n` +
+                `Nella versione production:\n` +
+                `- Download PDF slides\n` +
+                `- Link risorse aggiuntive\n` +
+                `- Certificato partecipazione\n` +
+                `- Template e tool presentati`);
+        }
+
+        function watchRecording(eventId) {
+            if (!auth.isAuthenticated() || !auth.hasAccess('events')) {
+                alert('Funzionalità disponibile per piani Pro/Advance');
+                return;
+            }
+
+            alert(`▶️ Registrazione Video: ${eventId}\n\n` +
+                `Nella versione production:\n` +
+                `- Player video embedded (Vimeo/YouTube)\n` +
+                `- Timestamp per navigazione rapida\n` +
+                `- Trascrizione disponibile\n` +
+                `- Download per offline viewing`);
+        }
+
+        function subscribeEventNewsletter() {
+            if (!auth.isAuthenticated()) {
+                alert('Registrati per iscriverti alla newsletter eventi');
+                window.location.href = 'index.html#registrazione';
+                return;
+            }
+
+            alert('✅ Iscritto alla Newsletter Eventi!\n\nRiceverai aggiornamenti su:\n- Nuovi eventi in calendario\n- Reminder eventi registrati\n- Materiali post-evento\n- Early bird per eventi a pagamento');
+        }
+    </script>
+</body>
+</html>

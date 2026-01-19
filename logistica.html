@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logistica Edile - ESGlog</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="container nav-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1>ESG<span class="logo-highlight">log</span></h1>
+                    </a>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.html#mission" class="nav-link">Mission</a></li>
+                    <li><a href="logistica.html" class="nav-link">Logistica</a></li>
+                    <li><a href="laboratorio.html" class="nav-link">Laboratorio AI</a></li>
+                    <li><a href="contatti.html" class="nav-link">Contatti</a></li>
+                    <li><a href="#" class="nav-link btn-login" id="loginBtn">Accedi</a></li>
+                    <li><a href="index.html#registrazione" class="nav-link btn-register">Registrati</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" style="padding: 60px 0;">
+        <div class="container">
+            <h2 class="hero-title" style="font-size: 2.5rem;">Logistica Edile 5.0: On-Site e Off-Site</h2>
+            <p class="hero-subtitle">Comprendere e ottimizzare i flussi logistici per una costruzione sostenibile</p>
+        </div>
+    </section>
+
+    <section style="padding: 80px 0; background-color: var(--white);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Cos'è la Logistica Edile?</h2>
+                <p class="section-subtitle">La gestione intelligente di materiali, mezzi e persone nel settore delle costruzioni</p>
+            </div>
+
+            <div class="mission-grid" style="margin-top: 3rem;">
+                <div class="mission-text">
+                    <h3 style="color: var(--primary-green);">Logistica On-Site (Cantiere)</h3>
+                    <p>La logistica on-site riguarda tutte le attività che avvengono <strong>all'interno del cantiere</strong>:</p>
+                    <ul class="mission-list">
+                        <li><strong>Movimentazione materiali:</strong> Scarico, stoccaggio, distribuzione nei diversi punti di lavoro</li>
+                        <li><strong>Gestione spazi:</strong> Layout cantiere, aree di stoccaggio, vie di transito</li>
+                        <li><strong>Coordinamento mezzi:</strong> Gru, elevatori, carrelli, escavatori</li>
+                        <li><strong>Gestione rifiuti:</strong> Separazione, raccolta, smaltimento/riciclo</li>
+                        <li><strong>Sicurezza:</strong> Percorsi sicuri, DPI, formazione lavoratori</li>
+                    </ul>
+                </div>
+                <div class="mission-image">
+                    <img src="https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?w=800" alt="Cantiere edile vista dall'alto" loading="lazy">
+                </div>
+            </div>
+
+            <div class="mission-grid" style="margin-top: 4rem; direction: rtl;">
+                <div class="mission-text" style="direction: ltr;">
+                    <h3 style="color: var(--primary-blue);">Logistica Off-Site (Supply Chain)</h3>
+                    <p>La logistica off-site gestisce il <strong>flusso dalla produzione al cantiere</strong>:</p>
+                    <ul class="mission-list">
+                        <li><strong>Approvvigionamento:</strong> Selezione fornitori, ordini, contratti</li>
+                        <li><strong>Trasporti:</strong> Pianificazione percorsi, mezzi, tempistiche consegne</li>
+                        <li><strong>Magazzini esterni:</strong> Stoccaggio centralizzato, gestione scorte</li>
+                        <li><strong>Tracking:</strong> Tracciabilità spedizioni, documentazione, certificazioni</li>
+                        <li><strong>Sostenibilità:</strong> Scelta fornitori ESG-compliant, ottimizzazione emissioni</li>
+                    </ul>
+                </div>
+                <div class="mission-image" style="direction: ltr;">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800" alt="Camion trasporto materiali edili" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 80px 0; background-color: var(--light-gray);">
+        <div class="container">
+            <h2 style="color: var(--primary-blue); text-align: center; margin-bottom: 3rem;">Flussi Logistici Integrati</h2>
+
+            <div class="digital-chart">
+                <h3>Modello Logistica Edile ESG</h3>
+                <div style="padding: 2rem;">
+                    <svg viewBox="0 0 800 600" style="width: 100%; max-width: 800px; margin: 0 auto; display: block;">
+                        <!-- Off-Site -->
+                        <g>
+                            <rect x="50" y="50" width="200" height="80" fill="#2c5aa0" rx="10"/>
+                            <text x="150" y="80" text-anchor="middle" fill="white" font-size="16" font-weight="bold">FORNITORI</text>
+                            <text x="150" y="105" text-anchor="middle" fill="white" font-size="12">Materiali ESG Certified</text>
+                        </g>
+
+                        <g>
+                            <rect x="50" y="200" width="200" height="80" fill="#2c5aa0" rx="10"/>
+                            <text x="150" y="230" text-anchor="middle" fill="white" font-size="16" font-weight="bold">TRASPORTI</text>
+                            <text x="150" y="255" text-anchor="middle" fill="white" font-size="12">Mezzi Ibridi/Elettrici</text>
+                        </g>
+
+                        <g>
+                            <rect x="50" y="350" width="200" height="80" fill="#2c5aa0" rx="10"/>
+                            <text x="150" y="380" text-anchor="middle" fill="white" font-size="16" font-weight="bold">MAGAZZINO</text>
+                            <text x="150" y="405" text-anchor="middle" fill="white" font-size="12">WMS + RFID Tracking</text>
+                        </g>
+
+                        <!-- On-Site -->
+                        <g>
+                            <rect x="350" y="50" width="200" height="80" fill="#2d9f7c" rx="10"/>
+                            <text x="450" y="80" text-anchor="middle" fill="white" font-size="16" font-weight="bold">CANTIERE</text>
+                            <text x="450" y="105" text-anchor="middle" fill="white" font-size="12">Stoccaggio Ottimizzato</text>
+                        </g>
+
+                        <g>
+                            <rect x="350" y="200" width="200" height="80" fill="#2d9f7c" rx="10"/>
+                            <text x="450" y="230" text-anchor="middle" fill="white" font-size="16" font-weight="bold">LAVORAZIONE</text>
+                            <text x="450" y="255" text-anchor="middle" fill="white" font-size="12">Efficienza Materiali</text>
+                        </g>
+
+                        <g>
+                            <rect x="350" y="350" width="200" height="80" fill="#2d9f7c" rx="10"/>
+                            <text x="450" y="380" text-anchor="middle" fill="white" font-size="16" font-weight="bold">RIFIUTI</text>
+                            <text x="450" y="405" text-anchor="middle" fill="white" font-size="12">Separazione & Riciclo</text>
+                        </g>
+
+                        <!-- Output -->
+                        <g>
+                            <rect x="625" y="200" width="150" height="80" fill="#667eea" rx="10"/>
+                            <text x="700" y="230" text-anchor="middle" fill="white" font-size="16" font-weight="bold">EDIFICIO</text>
+                            <text x="700" y="255" text-anchor="middle" fill="white" font-size="12">ESG Compliant</text>
+                        </g>
+
+                        <!-- Arrows -->
+                        <defs>
+                            <marker id="arrowblue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                                <path d="M0,0 L0,6 L9,3 z" fill="#2c5aa0" />
+                            </marker>
+                            <marker id="arrowgreen" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                                <path d="M0,0 L0,6 L9,3 z" fill="#2d9f7c" />
+                            </marker>
+                        </defs>
+
+                        <!-- Off-site flow -->
+                        <line x1="150" y1="130" x2="150" y2="195" stroke="#2c5aa0" stroke-width="3" marker-end="url(#arrowblue)"/>
+                        <line x1="150" y1="280" x2="150" y2="345" stroke="#2c5aa0" stroke-width="3" marker-end="url(#arrowblue)"/>
+
+                        <!-- To on-site -->
+                        <line x1="250" y1="390" x2="345" y2="90" stroke="#4a90e2" stroke-width="3" marker-end="url(#arrowgreen)" stroke-dasharray="5,5"/>
+
+                        <!-- On-site flow -->
+                        <line x1="450" y1="130" x2="450" y2="195" stroke="#2d9f7c" stroke-width="3" marker-end="url(#arrowgreen)"/>
+                        <line x1="450" y1="280" x2="450" y2="345" stroke="#2d9f7c" stroke-width="3" marker-end="url(#arrowgreen)"/>
+
+                        <!-- To building -->
+                        <line x1="550" y1="240" x2="620" y2="240" stroke="#2d9f7c" stroke-width="3" marker-end="url(#arrowgreen)"/>
+
+                        <!-- Labels -->
+                        <text x="40" y="30" fill="#2c5aa0" font-size="18" font-weight="bold">OFF-SITE</text>
+                        <text x="340" y="30" fill="#2d9f7c" font-size="18" font-weight="bold">ON-SITE</text>
+                    </svg>
+                </div>
+                <p class="chart-note">Modello semplificato dei flussi logistici on-site e off-site con focus ESG</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 80px 0; background-color: var(--white);">
+        <div class="container">
+            <h2 style="color: var(--primary-blue); text-align: center; margin-bottom: 3rem;">Benefici della Logistica 5.0</h2>
+
+            <div class="esg-grid">
+                <div class="esg-card">
+                    <div class="esg-icon environmental">🌍</div>
+                    <h3>Riduzione Impatto Ambientale</h3>
+                    <ul class="stats-list">
+                        <li>-30% emissioni CO2 trasporti</li>
+                        <li>-25% rifiuti non riciclati</li>
+                        <li>+40% efficienza energetica</li>
+                        <li>Certificazione LEED/BREEAM</li>
+                    </ul>
+                </div>
+
+                <div class="esg-card">
+                    <div class="esg-icon social">💰</div>
+                    <h3>Riduzione Costi</h3>
+                    <ul class="stats-list">
+                        <li>-20% costi logistici totali</li>
+                        <li>-35% tempi consegna materiali</li>
+                        <li>-15% sprechi e danneggiamenti</li>
+                        <li>ROI medio 18-24 mesi</li>
+                    </ul>
+                </div>
+
+                <div class="esg-card">
+                    <div class="esg-icon governance">📊</div>
+                    <h3>Compliance & Trasparenza</h3>
+                    <ul class="stats-list">
+                        <li>Tracciabilità completa supply chain</li>
+                        <li>Report ESG automatizzati</li>
+                        <li>Conformità EU Taxonomy</li>
+                        <li>Audit-ready documentation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-logistica">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Pronto a Digitalizzare la Tua Logistica?</h2>
+                <p>Registrati gratuitamente e inizia a monitorare le performance ESG della tua logistica edile</p>
+                <a href="index.html#registrazione" class="btn btn-primary btn-large">Registrati Gratis</a>
+                <a href="dashboard.html" class="btn btn-secondary btn-large">Accedi alla Dashboard</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>ESGlog</h4>
+                    <p>La piattaforma digitale per l'ESG nelle costruzioni</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Link Utili</h4>
+                    <ul>
+                        <li><a href="index.html#mission">Chi Siamo</a></li>
+                        <li><a href="logistica.html">Logistica</a></li>
+                        <li><a href="laboratorio.html">Laboratorio AI</a></li>
+                        <li><a href="eventi.html">Eventi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Supporto</h4>
+                    <ul>
+                        <li><a href="contatti.html">Contatti</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Termini di Servizio</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Seguici</h4>
+                    <div class="social-links">
+                        <a href="#">LinkedIn</a>
+                        <a href="#">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ESGlog. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

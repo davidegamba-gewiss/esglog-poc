@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risultati e Report - ESGlog</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="container nav-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1>ESG<span class="logo-highlight">log</span></h1>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li><a href="risultati.html" class="nav-link">Risultati</a></li>
+                    <li><a href="laboratorio.html" class="nav-link">Laboratorio AI</a></li>
+                    <li><a href="eventi.html" class="nav-link">Eventi</a></li>
+                    <li><a href="contatti.html" class="nav-link">Supporto</a></li>
+                    <li><a href="#" class="nav-link" id="logoutBtn">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3 id="userGreeting">Risultati</h3>
+                <p>Piano: <span id="currentPlan" class="badge badge-info">FREE</span></p>
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="dashboard.html">🏠 Panoramica</a></li>
+                <li><a href="dashboard.html#piani">💳 Piani e Costi</a></li>
+                <li><a href="dashboard.html#linee-guida">📋 Linee Guida</a></li>
+                <li><a href="risultati.html" class="active">📊 Risultati e Report</a></li>
+                <li><a href="laboratorio.html">🤖 Laboratorio AI</a></li>
+                <li><a href="eventi.html">📅 Eventi</a></li>
+                <li><a href="contatti.html">💬 Supporto</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="dashboard-header">
+                <h1>Risultati e Report ESG</h1>
+                <p class="lead">Analisi delle performance di logistica sostenibile</p>
+            </div>
+
+            <div id="noDataAlert" class="alert alert-warning">
+                <strong>⚠️ Attenzione:</strong> Non hai ancora compilato le linee guida logistiche.
+                <a href="dashboard.html#linee-guida">Compila ora</a> per generare report personalizzati.
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="dashboard-grid" style="margin-bottom: 3rem;">
+                <div class="dashboard-card">
+                    <div class="card-icon">🤖</div>
+                    <h3 class="card-title">Suggerimenti AI</h3>
+                    <p>Ottieni consigli basati su AI per migliorare la tua logistica</p>
+                    <a href="#suggerimenti" class="btn btn-primary">Vai ai Suggerimenti</a>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: var(--text-light);">✅ Disponibile: Tutti i piani</p>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-icon">📊</div>
+                    <h3 class="card-title">Benchmarking Settoriale</h3>
+                    <p>Confronta le tue performance con il settore</p>
+                    <a href="#benchmarking" class="btn btn-primary" id="benchmarkBtn">Confronta con Settore</a>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: var(--text-light);" id="benchmarkAccess">🔒 Disponibile: Piano Pro/Advance</p>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-icon">💬</div>
+                    <h3 class="card-title">Consulenza Dedicata</h3>
+                    <p>Parla con un esperto ESG per consulenza personalizzata</p>
+                    <a href="#consulenza" class="btn btn-primary" id="consultingBtn">Richiedi Consulenza</a>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: var(--text-light);" id="consultingAccess">🔒 Disponibile: Piano Advance</p>
+                </div>
+            </div>
+
+            <!-- KPI Dashboard -->
+            <section id="kpi-section">
+                <h2 style="color: var(--primary-blue); margin-bottom: 2rem;">KPI ESG Logistica</h2>
+
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <h4>Emissioni CO2</h4>
+                        <p style="font-size: 2.5rem; font-weight: 700; color: var(--primary-green);">-18%</p>
+                        <p>vs media settore</p>
+                        <div class="badge badge-success">Buono</div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <h4>Indice Riciclo</h4>
+                        <p style="font-size: 2.5rem; font-weight: 700; color: var(--primary-blue);">65%</p>
+                        <p>materiali riciclati</p>
+                        <div class="badge badge-success">Ottimo</div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <h4>Efficienza Trasporti</h4>
+                        <p style="font-size: 2.5rem; font-weight: 700; color: var(--accent-blue);">78/100</p>
+                        <p>score ottimizzazione</p>
+                        <div class="badge badge-warning">Migliorabile</div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <h4>Sicurezza</h4>
+                        <p style="font-size: 2.5rem; font-weight: 700; color: var(--success);">92/100</p>
+                        <p>compliance standard</p>
+                        <div class="badge badge-success">Eccellente</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Grafici -->
+            <section style="margin-top: 4rem;">
+                <h2 style="color: var(--primary-blue); margin-bottom: 2rem;">Analisi Dettagliata</h2>
+
+                <div class="digital-chart">
+                    <h3>Distribuzione Impatto ESG per Categoria</h3>
+                    <div class="chart-container">
+                        <canvas id="esgImpactChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="digital-chart" style="margin-top: 2rem;">
+                    <h3>Trend Emissioni CO2 Ultimi 6 Mesi</h3>
+                    <div class="chart-container">
+                        <canvas id="co2TrendChart"></canvas>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button class="btn btn-primary btn-large" onclick="downloadReport()">📥 Scarica Report PDF</button>
+                    <button class="btn btn-secondary" onclick="alert('Funzione in sviluppo: esporta dati in Excel')">📊 Esporta Excel</button>
+                </div>
+            </section>
+
+            <!-- Suggerimenti AI -->
+            <section id="suggerimenti" style="margin-top: 4rem;">
+                <h2 style="color: var(--primary-blue); margin-bottom: 2rem;">Suggerimenti AI Base</h2>
+                <p class="lead">Consigli generati tramite AI per ottimizzare la logistica ESG</p>
+
+                <div class="alert alert-info">
+                    <strong>🤖 AI-Powered:</strong> Questi suggerimenti sono generati analizzando le tue linee guida e best practices del settore. In produzione, l'integrazione sarebbe con ChatGPT/Gemini API.
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <h4>🚛 Trasporti</h4>
+                        <ul style="text-align: left; margin-top: 1rem;">
+                            <li>Considera il passaggio graduale a mezzi ibridi per ridurre emissioni del 25%</li>
+                            <li>Implementa software di ottimizzazione percorsi per ridurre km percorsi del 15%</li>
+                            <li>Consolida le consegne con approccio "Just-in-Time" per ridurre frequenza</li>
+                        </ul>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <h4>📦 Stoccaggio</h4>
+                        <ul style="text-align: left; margin-top: 1rem;">
+                            <li>Implementa sistema WMS (Warehouse Management System) per tracciabilità</li>
+                            <li>Adotta tecnologia RFID per monitoraggio real-time materiali</li>
+                            <li>Riduci scorte con forecasting AI per minimizzare sprechi</li>
+                        </ul>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <h4>♻️ Sostenibilità</h4>
+                        <ul style="text-align: left; margin-top: 1rem;">
+                            <li>Aumenta categorie separazione rifiuti da 3 a 5+ per migliorare riciclo</li>
+                            <li>Certifica processo riciclo con ISO 14001</li>
+                            <li>Partner con fornitori certificati ESG per supply chain sostenibile</li>
+                        </ul>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <h4>👷 Sicurezza & Social</h4>
+                        <ul style="text-align: left; margin-top: 1rem;">
+                            <li>Implementa formazione continua trimestrale per lavoratori</li>
+                            <li>Adotta DPI smart con sensori IoT per monitoraggio sicurezza</li>
+                            <li>Crea programma coinvolgimento comunità locali per impatto sociale positivo</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Benchmarking (Pro+) -->
+            <section id="benchmarking" style="margin-top: 4rem;">
+                <h2 style="color: var(--primary-blue); margin-bottom: 2rem;">Benchmarking Settoriale AI</h2>
+                <div id="benchmarkContent">
+                    <div class="alert alert-warning">
+                        <strong>🔒 Funzionalità Premium:</strong> Il benchmarking settoriale è disponibile solo per piani Pro e Advance.
+                        <a href="dashboard.html#piani">Effettua l'upgrade</a> per confrontare le tue performance con aziende simili del tuo settore in modo anonimo.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Consulenza (Advance) -->
+            <section id="consulenza" style="margin-top: 4rem;">
+                <h2 style="color: var(--primary-blue); margin-bottom: 2rem;">Consulenza e Formazione</h2>
+                <div id="consultingContent">
+                    <div class="alert alert-warning">
+                        <strong>🔒 Funzionalità Advance:</strong> La consulenza 1-to-1 e la messaggistica con esperti sono disponibili solo per piano Advance.
+                        <a href="dashboard.html#piani">Passa ad Advance</a> per accedere a:
+                        <ul style="margin-top: 1rem;">
+                            <li>✅ Consulente ESG dedicato</li>
+                            <li>✅ Messaggistica integrata con esperti</li>
+                            <li>✅ Booking calendario con Calendly</li>
+                            <li>✅ Formazione personalizzata sul tuo settore</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check se ci sono linee guida
+            if (auth.isAuthenticated()) {
+                const user = auth.getCurrentUser();
+                if (user.guidelines && Object.keys(user.guidelines).length > 0) {
+                    document.getElementById('noDataAlert').style.display = 'none';
+                }
+
+                // Check accesso funzionalità per piano
+                if (auth.hasAccess('benchmarking')) {
+                    document.getElementById('benchmarkAccess').innerHTML = '✅ Disponibile nel tuo piano';
+                    document.getElementById('benchmarkContent').innerHTML = `
+                        <div class="alert alert-success">
+                            <strong>✅ Benchmarking Attivo</strong>
+                        </div>
+                        <div class="digital-chart">
+                            <h3>Confronto Performance vs Settore: ${user.sector}</h3>
+                            <div class="chart-container">
+                                <canvas id="benchmarkChart"></canvas>
+                            </div>
+                            <div style="margin-top: 2rem;">
+                                <h4>Analisi Punti di Forza</h4>
+                                <ul>
+                                    <li>✅ <strong>Gestione Rifiuti:</strong> +22% rispetto media settore</li>
+                                    <li>✅ <strong>Sicurezza:</strong> +15% compliance vs competitors</li>
+                                </ul>
+                                <h4>Aree di Miglioramento</h4>
+                                <ul>
+                                    <li>⚠️ <strong>Digitalizzazione:</strong> -12% rispetto best performers</li>
+                                    <li>⚠️ <strong>Efficienza Trasporti:</strong> -8% vs media settore</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `;
+
+                    // Crea grafico benchmark
+                    setTimeout(() => {
+                        const ctx = document.getElementById('benchmarkChart');
+                        if (ctx) {
+                            new Chart(ctx, {
+                                type: 'radar',
+                                data: {
+                                    labels: ['Emissioni CO2', 'Riciclo', 'Digitalizzazione', 'Sicurezza', 'Efficienza', 'Social Impact'],
+                                    datasets: [{
+                                        label: 'La Tua Azienda',
+                                        data: [75, 85, 62, 92, 70, 68],
+                                        borderColor: 'rgb(45, 159, 124)',
+                                        backgroundColor: 'rgba(45, 159, 124, 0.2)'
+                                    }, {
+                                        label: 'Media Settore',
+                                        data: [65, 63, 74, 77, 78, 70],
+                                        borderColor: 'rgb(44, 90, 160)',
+                                        backgroundColor: 'rgba(44, 90, 160, 0.2)'
+                                    }]
+                                },
+                                options: {
+                                    responsive: true,
+                                    maintainAspectRatio: false
+                                }
+                            });
+                        }
+                    }, 100);
+                }
+
+                if (auth.hasAccess('consulting')) {
+                    document.getElementById('consultingAccess').innerHTML = '✅ Disponibile nel tuo piano';
+                    document.getElementById('consultingContent').innerHTML = `
+                        <div class="alert alert-success">
+                            <strong>✅ Consulenza Attiva</strong>
+                        </div>
+                        <div class="dashboard-grid">
+                            <div class="dashboard-card">
+                                <h4>💬 Chat con Esperto</h4>
+                                <p>Messaggistica integrata con il tuo consulente ESG dedicato</p>
+                                <button class="btn btn-primary" onclick="alert('In produzione: apertura chat Socket.io con consulente')">Apri Chat</button>
+                            </div>
+                            <div class="dashboard-card">
+                                <h4>📅 Prenota Consulenza</h4>
+                                <p>Calendario disponibilità per sessioni 1-to-1</p>
+                                <button class="btn btn-primary" onclick="window.open('https://calendly.com', '_blank')">Prenota su Calendly</button>
+                            </div>
+                            <div class="dashboard-card">
+                                <h4>📚 Formazione</h4>
+                                <p>Accedi a materiali di formazione personalizzati per il tuo settore</p>
+                                <button class="btn btn-primary" onclick="alert('In produzione: accesso area formazione')">Vai a Formazione</button>
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+
+            // Grafico ESG Impact
+            const ctx1 = document.getElementById('esgImpactChart');
+            if (ctx1) {
+                new Chart(ctx1, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Environmental', 'Social', 'Governance'],
+                        datasets: [{
+                            data: [45, 30, 25],
+                            backgroundColor: [
+                                'rgba(45, 159, 124, 0.8)',
+                                'rgba(44, 90, 160, 0.8)',
+                                'rgba(102, 126, 234, 0.8)'
+                            ],
+                            borderWidth: 2,
+                            borderColor: '#fff'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom'
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Grafico CO2 Trend
+            const ctx2 = document.getElementById('co2TrendChart');
+            if (ctx2) {
+                new Chart(ctx2, {
+                    type: 'line',
+                    data: {
+                        labels: ['Lug', 'Ago', 'Set', 'Ott', 'Nov', 'Dic'],
+                        datasets: [{
+                            label: 'Emissioni CO2 (ton)',
+                            data: [125, 118, 110, 105, 98, 92],
+                            borderColor: 'rgb(45, 159, 124)',
+                            backgroundColor: 'rgba(45, 159, 124, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        }, {
+                            label: 'Target',
+                            data: [120, 115, 110, 105, 100, 95],
+                            borderColor: 'rgb(220, 53, 69)',
+                            borderDash: [5, 5],
+                            tension: 0.4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom'
+                            }
+                        }
+                    }
+                });
+            }
+        });
+
+        function downloadReport() {
+            if (!auth.isAuthenticated()) {
+                alert('Devi essere loggato');
+                return;
+            }
+
+            alert('📥 Download Report PDF\n\n' +
+                'Questa è una simulazione PoC. Nella versione production:\n' +
+                '- Verrebbe generato un PDF con tutti i KPI ESG\n' +
+                '- Include grafici e analisi dettagliate\n' +
+                '- Conforme a standard EU Taxonomy e CSRD\n' +
+                '- Pronto per stakeholder e audit');
+        }
+    </script>
+</body>
+</html>

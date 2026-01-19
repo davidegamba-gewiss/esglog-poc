@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - ESGlog</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container nav-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1>ESG<span class="logo-highlight">log</span></h1>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li><a href="risultati.html" class="nav-link">Risultati</a></li>
+                    <li><a href="laboratorio.html" class="nav-link">Laboratorio AI</a></li>
+                    <li><a href="eventi.html" class="nav-link">Eventi</a></li>
+                    <li><a href="contatti.html" class="nav-link">Supporto</a></li>
+                    <li><a href="#" class="nav-link" id="logoutBtn">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3 id="userGreeting">Dashboard</h3>
+                <p>Piano: <span id="currentPlan" class="badge badge-info">FREE</span></p>
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="dashboard.html" class="active">🏠 Panoramica</a></li>
+                <li><a href="#piani">💳 Piani e Costi</a></li>
+                <li><a href="#linee-guida">📋 Linee Guida</a></li>
+                <li><a href="risultati.html">📊 Risultati e Report</a></li>
+                <li><a href="laboratorio.html">🤖 Laboratorio AI</a></li>
+                <li><a href="eventi.html">📅 Eventi</a></li>
+                <li><a href="contatti.html">💬 Supporto</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard Header -->
+            <div class="dashboard-header">
+                <h1>Benvenuto nella tua Dashboard ESGlog</h1>
+                <p class="lead">Gestisci la tua logistica edile con un approccio ESG data-driven</p>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <div class="card-icon">📊</div>
+                    <h3 class="card-title">Report Generati</h3>
+                    <p style="font-size: 2rem; font-weight: 700; color: var(--primary-green);">0</p>
+                    <p>Inizia compilando le linee guida</p>
+                    <a href="#linee-guida" class="btn btn-outline">Inizia</a>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-icon">🌱</div>
+                    <h3 class="card-title">Impatto ESG</h3>
+                    <p style="font-size: 2rem; font-weight: 700; color: var(--primary-blue);">N/D</p>
+                    <p>Compila i dati per vedere l'impatto</p>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-icon">🤖</div>
+                    <h3 class="card-title">Suggerimenti AI</h3>
+                    <p style="font-size: 2rem; font-weight: 700; color: var(--accent-blue);">Attivo</p>
+                    <p>Disponibili nel tuo piano</p>
+                    <a href="risultati.html#suggerimenti" class="btn btn-outline">Vai</a>
+                </div>
+            </div>
+
+            <!-- Piani e Costi -->
+            <section id="piani" style="margin-top: 4rem;">
+                <h2 style="color: var(--primary-blue); margin-bottom: 2rem;">Piani e Costi</h2>
+                <p class="lead">Scegli il piano più adatto alle esigenze della tua azienda</p>
+
+                <div class="plans-grid">
+                    <!-- Piano Free -->
+                    <div class="plan-card">
+                        <h3 class="plan-name">Free</h3>
+                        <div class="plan-price">€0</div>
+                        <p class="plan-period">per sempre</p>
+                        <ul class="plan-features">
+                            <li>✅ Linee guida logistica base</li>
+                            <li>✅ Report ESG scaricabili (PDF)</li>
+                            <li>✅ Suggerimenti AI base</li>
+                            <li>✅ Dashboard analytics</li>
+                            <li>❌ Benchmarking settoriale</li>
+                            <li>❌ Scouting tecnologie</li>
+                            <li>❌ Consulenza dedicata</li>
+                            <li>❌ Accesso eventi</li>
+                        </ul>
+                        <button class="btn btn-outline btn-block" id="currentPlanBtn" disabled>Piano Attuale</button>
+                    </div>
+
+                    <!-- Piano Pro -->
+                    <div class="plan-card featured">
+                        <div class="badge badge-success" style="margin-bottom: 1rem;">Più Popolare</div>
+                        <h3 class="plan-name">Pro</h3>
+                        <div class="plan-price">€99</div>
+                        <p class="plan-period">/mese + IVA</p>
+                        <ul class="plan-features">
+                            <li>✅ <strong>Tutto di Free, più:</strong></li>
+                            <li>✅ Benchmarking settoriale AI</li>
+                            <li>✅ Analisi comparativa anonima</li>
+                            <li>✅ Report punti forza/debolezza</li>
+                            <li>✅ Scouting tecnologie AI Lab</li>
+                            <li>✅ Accesso eventi esclusivi</li>
+                            <li>✅ Supporto prioritario</li>
+                            <li>❌ Consulenza 1-to-1</li>
+                        </ul>
+                        <button class="btn btn-primary btn-block" onclick="upgradePlan('pro')">Passa a Pro</button>
+                        <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem;">Prova gratuita 30 giorni</p>
+                    </div>
+
+                    <!-- Piano Advance -->
+                    <div class="plan-card">
+                        <h3 class="plan-name">Advance</h3>
+                        <div class="plan-price">€249</div>
+                        <p class="plan-period">/mese + IVA</p>
+                        <ul class="plan-features">
+                            <li>✅ <strong>Tutto di Pro, più:</strong></li>
+                            <li>✅ Consulenza dedicata 1-to-1</li>
+                            <li>✅ Messaggistica con esperti</li>
+                            <li>✅ Formazione personalizzata</li>
+                            <li>✅ Calendly booking prioritario</li>
+                            <li>✅ Report personalizzati avanzati</li>
+                            <li>✅ Materiali eventi premium</li>
+                            <li>✅ Account manager dedicato</li>
+                        </ul>
+                        <button class="btn btn-primary btn-block" onclick="upgradePlan('advance')">Passa a Advance</button>
+                        <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem;">Prova gratuita 30 giorni</p>
+                    </div>
+                </div>
+
+                <div class="alert alert-info" style="margin-top: 2rem;">
+                    <strong>💡 Nota:</strong> Questa è una simulazione PoC. I pagamenti con Stripe sarebbero integrati nella versione production.
+                </div>
+            </section>
+
+            <!-- Linee Guida Logistica -->
+            <section id="linee-guida" style="margin-top: 4rem;">
+                <h2 style="color: var(--primary-blue); margin-bottom: 2rem;">Linee Guida Logistica</h2>
+                <p class="lead">Compila i parametri della tua logistica on-site e off-site per ottenere analisi ESG dettagliate</p>
+
+                <div class="alert alert-info">
+                    <strong>📋 Come funziona:</strong> Seleziona le opzioni che descrivono meglio la gestione logistica dei tuoi cantieri. I dati verranno utilizzati per generare report ESG e suggerimenti AI personalizzati.
+                </div>
+
+                <div class="table-container">
+                    <table id="guidelinesTable">
+                        <thead>
+                            <tr>
+                                <th>Fase Logistica</th>
+                                <th>Parametro</th>
+                                <th>Selezione</th>
+                                <th>Note</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="3"><strong>Trasporti</strong></td>
+                                <td>Tipo mezzi utilizzati</td>
+                                <td>
+                                    <select class="guideline-select" data-param="transport_type">
+                                        <option value="">Seleziona...</option>
+                                        <option value="diesel">Diesel</option>
+                                        <option value="hybrid">Ibridi</option>
+                                        <option value="electric">Elettrici</option>
+                                        <option value="mixed">Misto</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="guideline-note" data-param="transport_type_note" placeholder="Note opzionali"></td>
+                            </tr>
+                            <tr>
+                                <td>Ottimizzazione percorsi</td>
+                                <td>
+                                    <select class="guideline-select" data-param="route_optimization">
+                                        <option value="">Seleziona...</option>
+                                        <option value="manual">Manuale</option>
+                                        <option value="basic_software">Software base</option>
+                                        <option value="ai_optimized">AI ottimizzato</option>
+                                        <option value="none">Nessuna</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="guideline-note" data-param="route_optimization_note"></td>
+                            </tr>
+                            <tr>
+                                <td>Frequenza consegne</td>
+                                <td>
+                                    <select class="guideline-select" data-param="delivery_frequency">
+                                        <option value="">Seleziona...</option>
+                                        <option value="daily">Giornaliera</option>
+                                        <option value="weekly">Settimanale</option>
+                                        <option value="on_demand">On-demand consolidata</option>
+                                        <option value="just_in_time">Just-in-time</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="guideline-note" data-param="delivery_frequency_note"></td>
+                            </tr>
+
+                            <tr>
+                                <td rowspan="3"><strong>Stoccaggio Materiali</strong></td>
+                                <td>Gestione magazzino</td>
+                                <td>
+                                    <select class="guideline-select" data-param="warehouse_management">
+                                        <option value="">Seleziona...</option>
+                                        <option value="manual">Manuale/Carta</option>
+                                        <option value="spreadsheet">Fogli di calcolo</option>
+                                        <option value="wms">Software WMS</option>
+                                        <option value="integrated">Sistema integrato</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="guideline-note" data-param="warehouse_management_note"></td>
+                            </tr>
+                            <tr>
+                                <td>Tracciabilità materiali</td>
+                                <td>
+                                    <select class="guideline-select" data-param="material_tracking">
+                                        <option value="">Seleziona...</option>
+                                        <option value="none">Nessuna</option>
+                                        <option value="basic">Base (registri)</option>
+                                        <option value="barcode">Barcode/QR</option>
+                                        <option value="rfid">RFID/IoT</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="guideline-note" data-param="material_tracking_note"></td>
+                            </tr>
+                            <tr>
+                                <td>Gestione scorte</td>
+                                <td>
+                                    <select class="guideline-select" data-param="inventory_management">
+                                        <option value="">Seleziona...</option>
+                                        <option value="overstocking">Sovra-stoccaggio</option>
+                                        <option value="standard">Standard</option>
+                                        <option value="lean">Lean/JIT</option>
+                                        <option value="ai_forecast">AI Forecasting</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="guideline-note" data-param="inventory_management_note"></td>
+                            </tr>
+
+                            <tr>
+                                <td rowspan="2"><strong>Rifiuti e Riciclo</strong></td>
+                                <td>Separazione rifiuti</td>
+                                <td>
+                                    <select class="guideline-select" data-param="waste_separation">
+                                        <option value="">Seleziona...</option>
+                                        <option value="none">Non applicata</option>
+                                        <option value="basic">Base (2-3 categorie)</option>
+                                        <option value="detailed">Dettagliata (5+ categorie)</option>
+                                        <option value="certified">Certificata ISO</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="guideline-note" data-param="waste_separation_note"></td>
+                            </tr>
+                            <tr>
+                                <td>Riciclo materiali</td>
+                                <td>
+                                    <select class="guideline-select" data-param="recycling">
+                                        <option value="">Seleziona...</option>
+                                        <option value="low">&lt; 20%</option>
+                                        <option value="medium">20-50%</option>
+                                        <option value="high">50-80%</option>
+                                        <option value="very_high">&gt; 80%</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="guideline-note" data-param="recycling_note"></td>
+                            </tr>
+
+                            <tr>
+                                <td rowspan="2"><strong>Sicurezza</strong></td>
+                                <td>Formazione lavoratori</td>
+                                <td>
+                                    <select class="guideline-select" data-param="worker_training">
+                                        <option value="">Seleziona...</option>
+                                        <option value="minimal">Base obbligatoria</option>
+                                        <option value="standard">Standard settore</option>
+                                        <option value="advanced">Avanzata continua</option>
+                                        <option value="certified">Certificata esterna</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="guideline-note" data-param="worker_training_note"></td>
+                            </tr>
+                            <tr>
+                                <td>DPI e attrezzature</td>
+                                <td>
+                                    <select class="guideline-select" data-param="safety_equipment">
+                                        <option value="">Seleziona...</option>
+                                        <option value="basic">Base normativi</option>
+                                        <option value="standard">Standard</option>
+                                        <option value="premium">Premium/Innovativi</option>
+                                        <option value="smart">Smart/IoT monitorati</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="guideline-note" data-param="safety_equipment_note"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button class="btn btn-primary btn-large" onclick="saveGuidelines()">💾 Salva Linee Guida</button>
+                    <button class="btn btn-secondary" onclick="loadGuidelines()">🔄 Carica Salvate</button>
+                </div>
+
+                <div id="saveMessage" class="alert alert-success" style="display: none; margin-top: 2rem;">
+                    ✅ Linee guida salvate con successo! Vai alla sezione <a href="risultati.html">Risultati</a> per vedere l'analisi ESG.
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Funzioni Gestione Linee Guida
+        function saveGuidelines() {
+            if (!auth.isAuthenticated()) {
+                alert('Devi essere loggato per salvare');
+                return;
+            }
+
+            const guidelines = {};
+            const selects = document.querySelectorAll('.guideline-select');
+            const notes = document.querySelectorAll('.guideline-note');
+
+            selects.forEach(select => {
+                const param = select.getAttribute('data-param');
+                guidelines[param] = select.value;
+            });
+
+            notes.forEach(note => {
+                const param = note.getAttribute('data-param');
+                guidelines[param] = note.value;
+            });
+
+            // Salva nell'utente
+            const user = auth.getCurrentUser();
+            user.guidelines = guidelines;
+            user.lastUpdated = new Date().toISOString();
+            auth.updateUser({ guidelines, lastUpdated: user.lastUpdated });
+
+            // Mostra messaggio
+            document.getElementById('saveMessage').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('saveMessage').style.display = 'none';
+            }, 5000);
+        }
+
+        function loadGuidelines() {
+            if (!auth.isAuthenticated()) {
+                alert('Devi essere loggato');
+                return;
+            }
+
+            const user = auth.getCurrentUser();
+            if (!user.guidelines || Object.keys(user.guidelines).length === 0) {
+                alert('Non ci sono linee guida salvate');
+                return;
+            }
+
+            const guidelines = user.guidelines;
+
+            Object.keys(guidelines).forEach(param => {
+                const element = document.querySelector(`[data-param="${param}"]`);
+                if (element) {
+                    element.value = guidelines[param];
+                }
+            });
+
+            alert('Linee guida caricate!');
+        }
+
+        function upgradePlan(plan) {
+            if (!auth.isAuthenticated()) {
+                alert('Devi essere loggato');
+                window.location.href = 'index.html#registrazione';
+                return;
+            }
+
+            // Simulazione upgrade (in produzione sarebbe Stripe)
+            const confirmMsg = `Vuoi passare al piano ${plan.toUpperCase()}?\n\n` +
+                `Questa è una simulazione PoC. Nella versione reale verresti reindirizzato a Stripe per il pagamento.\n\n` +
+                `Prova gratuita di 30 giorni inclusa!`;
+
+            if (confirm(confirmMsg)) {
+                auth.updateUser({ plan: plan });
+                alert(`Congratulazioni! Sei passato al piano ${plan.toUpperCase()}!\n\nRicarica la pagina per vedere le nuove funzionalità.`);
+                location.reload();
+            }
+        }
+
+        // Carica automaticamente linee guida se esistono
+        document.addEventListener('DOMContentLoaded', function() {
+            if (auth.isAuthenticated()) {
+                const user = auth.getCurrentUser();
+                if (user.guidelines && Object.keys(user.guidelines).length > 0) {
+                    loadGuidelines();
+                }
+
+                // Update current plan button
+                const currentPlanBtn = document.getElementById('currentPlanBtn');
+                if (user.plan !== 'free' && currentPlanBtn) {
+                    currentPlanBtn.style.display = 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
